@@ -1,0 +1,16 @@
+server:
+  contextPath: /author-service
+  port: ${PORT:8081} # Indicate the default PORT where this service will be started
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9091/eureka
+  healthcheck:
+    enabled: true
+    lease:
+      duration: 5
+
+management:
+  security:
+    enabled: false  #disable the spring security on the management endpoints like /env, /refresh etc.
